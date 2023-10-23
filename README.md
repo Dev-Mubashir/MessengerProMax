@@ -1,9 +1,5 @@
 # Chat/Messaging App Light and Dark Theme - Flutter UI
 
-## [Watch it on YouTube](https://youtu.be/uiJF-ShOLyo)
-
-## [Complete Source Code (Patreon only)](https://bit.ly/3n5mdwS)
-
 **Packages we are using:**
 
 - goole_fonts: [link](https://pub.dev/packages/google_fonts)
@@ -29,11 +25,3 @@ Today we gonna build messing/chat app #ui using #flutter that runs both Android 
 ► Search on Call history
 ► Profile Screen
 ► Edit Profile
-
-### Chat/Messaging App Light and Dark Theme Final UI
-
-![Preview](/gif.gif)
-![Preview](/ui_kit.gif)
-
-![App UI](/ui.png)
-![App UI](/chat_kit.png)

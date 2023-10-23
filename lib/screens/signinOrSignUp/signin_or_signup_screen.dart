@@ -1,43 +1,101 @@
 import 'package:chat/components/primary_button.dart';
+import 'package:chat/components/secondary_button.dart';
 import 'package:chat/constants.dart';
 import 'package:chat/screens/chats/chats_screen.dart';
+import 'package:chat/screens/signinOrSignUp/create_new_account.dart';
+import 'package:chat/screens/signinOrSignUp/forgot_password.dart';
 import 'package:flutter/material.dart';
 
 class SigninOrSignupScreen extends StatelessWidget {
-  const SigninOrSignupScreen({Key? key}) : super(key: key);
+  SigninOrSignupScreen({Key? key}) : super(key: key);
+
+  final TextEditingController emailController = TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: kDefaultPadding),
           child: Column(
             children: [
-              const Spacer(flex: 2),
+              const Spacer(flex: 1),
               Image.asset(
                 MediaQuery.of(context).platformBrightness == Brightness.light
-                    ? "assets/images/Logo_light.png"
-                    : "assets/images/Logo_dark.png",
-                height: 146,
+                    ? "assets/images/Logo.png"
+                    : "assets/images/Logo.png",
+                // ? "assets/images/Logo_light.png"
+                // : "assets/images/Logo_dark.png",
+                height: 70,
               ),
-              const Spacer(),
-              PrimaryButton(
-                text: "Sign In",
-                press: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => const ChatsScreen(),
+              const Spacer(flex: 1),
+              TextField(
+                controller: emailController,
+                decoration: InputDecoration(
+                  labelText: 'Mobile number or email',
+                  labelStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontWeight: FontWeight.w500),
+
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
                   ),
+                  // hintText: 'Mobile number or email',
+                ),
+              ),
+              const SizedBox(height: kDefaultPadding / 2),
+              TextField(
+                controller: passwordController,
+                decoration: InputDecoration(
+                  labelText: 'Password',
+                  labelStyle: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
+                      fontWeight: FontWeight.w500),
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(14),
+                  ),
+                  // hintText: 'Enter your Password',
                 ),
               ),
               const SizedBox(height: kDefaultPadding * 1.5),
               PrimaryButton(
-                color: Theme.of(context).colorScheme.secondary,
-                text: "Sign Up",
+                text: "Log In",
                 press: () {},
+                // press: () => Navigator.push(
+                //   context,
+                //   MaterialPageRoute(
+                //     builder: (context) => const ChatsScreen(),
+                //   ),
+                // ),
               ),
-              const Spacer(flex: 2),
+              const SizedBox(height: kDefaultPadding / 2),
+              TextButton(
+                onPressed: () {
+                  // Navigate to ScreenB
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ForgotPassword()),
+                  );
+                },
+                child: const Text("Forgot Password?",
+                    style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+              ),
+              const Spacer(
+                flex: 2,
+              ),
+              SecondaryButton(
+                // color: Theme.of(context).colorScheme.secondary,
+                text: "Create new account",
+                press: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => CreateNewAccount(),
+                  ),
+                ),
+              ),
+              const SizedBox(height: kDefaultPadding * 1.5),
             ],
           ),
         ),

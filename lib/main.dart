@@ -1,3 +1,4 @@
+// import 'package:chat/screens/signinOrSignUp/signin_or_signup_screen.dart';
 import 'package:chat/screens/welcome/welcome_screen.dart';
 import 'package:chat/theme.dart';
 import 'package:flutter/material.dart';
@@ -17,8 +18,9 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: lightThemeData(context),
       darkTheme: darkThemeData(context),
-      themeMode: ThemeMode.light,
-      home: const WelcomeScreen(),
+      // darkTheme: lightThemeData(context),
+      themeMode: ThemeMode.dark,
+      home: SplashScreen(),
     );
   }
 }
