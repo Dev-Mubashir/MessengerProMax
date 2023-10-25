@@ -28,9 +28,15 @@ class SigninOrSignupScreen extends StatelessWidget {
                     : "assets/images/Logo.png",
                 // ? "assets/images/Logo_light.png"
                 // : "assets/images/Logo_dark.png",
-                height: 70,
+                height: 120,
               ),
-              const Spacer(flex: 1),
+              SizedBox(height: 20),
+              Text(
+                "Login with your phone number or email",
+                style:
+                    TextStyle(color: Theme.of(context).colorScheme.secondary),
+              ),
+              SizedBox(height: 20),
               TextField(
                 controller: emailController,
                 decoration: InputDecoration(
@@ -79,8 +85,10 @@ class SigninOrSignupScreen extends StatelessWidget {
                     MaterialPageRoute(builder: (context) => ForgotPassword()),
                   );
                 },
-                child: const Text("Forgot Password?",
-                    style: TextStyle(color: Color.fromARGB(255, 0, 0, 0))),
+                child: Text("Forgot Password?",
+                    style: TextStyle(
+                      color: Theme.of(context).colorScheme.secondary,
+                    )),
               ),
               const Spacer(
                 flex: 2,
@@ -88,10 +96,11 @@ class SigninOrSignupScreen extends StatelessWidget {
               SecondaryButton(
                 // color: Theme.of(context).colorScheme.secondary,
                 text: "Create new account",
+                color: Theme.of(context).colorScheme.secondary,
                 press: () => Navigator.push(
                   context,
                   MaterialPageRoute(
-                    builder: (context) => CreateNewAccount(),
+                    builder: (context) => const CreateNewAccount(),
                   ),
                 ),
               ),
