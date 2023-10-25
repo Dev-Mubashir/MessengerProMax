@@ -7,8 +7,9 @@ class PrimaryButton extends StatelessWidget {
     Key? key,
     required this.text,
     required this.press,
-    this.color = kPrimaryColor,
-    this.padding = const EdgeInsets.all(kDefaultPadding * 0.75),
+    this.color = kgreylight,
+    this.padding = const EdgeInsets.symmetric(
+        horizontal: kDefaultPadding * 0.75, vertical: kDefaultPadding * 0.90),
   }) : super(key: key);
 
   final String text;
@@ -20,7 +21,7 @@ class PrimaryButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialButton(
       shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(40)),
+        borderRadius: BorderRadius.all(Radius.circular(15)),
       ),
       padding: padding,
       color: color,
@@ -28,7 +29,8 @@ class PrimaryButton extends StatelessWidget {
       onPressed: press,
       child: Text(
         text,
-        style: const TextStyle(color: Colors.white),
+        style: const TextStyle(
+            color: Colors.white, fontSize: 16, fontWeight: FontWeight.w900),
       ),
     );
   }
