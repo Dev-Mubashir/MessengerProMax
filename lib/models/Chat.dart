@@ -68,4 +68,18 @@ List chatsData = [
     time: "5d ago",
     isActive: false,
   ),
+  Chat(
+    name: "Ralph Edwards",
+    lastMessage: "Do you have update...",
+    image: "assets/images/user_3.png",
+    time: "5d ago",
+    isActive: false,
+  ),
+  Chat(
+    name: "Ralph Edwards",
+    lastMessage: "Do you have update...",
+    image: "assets/images/user_3.png",
+    time: "5d ago",
+    isActive: false,
+  ),
 ];

@@ -13,6 +13,8 @@ const kErrorColor = Color(0xFFF03738);
 
 const kgrey = Color(0xFFC4C4C4);
 const kgreylight = Color.fromARGB(255, 81, 81, 81);
+const kgreydark = Color.fromARGB(255, 55, 55, 55);
 const kwhite = Color.fromARGB(255, 255, 255, 255);
+const kblack = Colors.black;
 
 const kDefaultPadding = 20.0;

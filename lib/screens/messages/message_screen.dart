@@ -16,10 +16,13 @@ class MessagesScreen extends StatelessWidget {
 
   AppBar buildAppBar() {
     return AppBar(
+      backgroundColor: kblack,
       automaticallyImplyLeading: false,
+      leading: IconButton(
+          icon: const Icon(Icons.arrow_back_ios, color: kPrimaryColor),
+          onPressed: () {}),
       title: const Row(
         children: [
-          BackButton(),
           CircleAvatar(
             backgroundImage: AssetImage("assets/images/user_2.png"),
           ),
@@ -28,7 +31,7 @@ class MessagesScreen extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                "Kristin Watson",
+                "Muhammad Abdullah",
                 style: TextStyle(fontSize: 16),
               ),
               Text(
@@ -41,11 +44,17 @@ class MessagesScreen extends StatelessWidget {
       ),
       actions: [
         IconButton(
-          icon: const Icon(Icons.local_phone),
+          icon: const Icon(
+            Icons.local_phone,
+            color: kPrimaryColor,
+          ),
           onPressed: () {},
         ),
         IconButton(
-          icon: const Icon(Icons.videocam),
+          icon: const Icon(
+            Icons.videocam,
+            color: kPrimaryColor,
+          ),
           onPressed: () {},
         ),
         const SizedBox(width: kDefaultPadding / 2),

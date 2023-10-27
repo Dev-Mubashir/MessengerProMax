@@ -1,4 +1,6 @@
 // import 'package:chat/screens/signinOrSignUp/signin_or_signup_screen.dart';
+import 'package:chat/screens/chats/chats_screen.dart';
+import 'package:chat/screens/messages/message_screen.dart';
 import 'package:chat/screens/welcome/welcome_screen.dart';
 import 'package:chat/theme.dart';
 import 'package:flutter/material.dart';
@@ -20,7 +22,7 @@ class MyApp extends StatelessWidget {
       darkTheme: darkThemeData(context),
       // darkTheme: lightThemeData(context),
       themeMode: ThemeMode.dark,
-      home: SplashScreen(),
+      home: const ChatsScreen(),
     );
   }
 }

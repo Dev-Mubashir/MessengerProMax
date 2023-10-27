@@ -7,26 +7,41 @@ import 'package:flutter/material.dart';
 import 'chat_card.dart';
 
 class Body extends StatelessWidget {
-  const Body({Key? key}) : super(key: key);
+  Body({Key? key}) : super(key: key);
+
+  final TextEditingController _searchController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Container(
-          padding: const EdgeInsets.fromLTRB(
-              kDefaultPadding, 0, kDefaultPadding, kDefaultPadding),
-          color: kPrimaryColor,
-          child: Row(
-            children: [
-              FillOutlineButton(press: () {}, text: "Recent Message"),
-              const SizedBox(width: kDefaultPadding),
-              FillOutlineButton(
-                press: () {},
-                text: "Active",
-                isFilled: false,
+        Padding(
+          padding: const EdgeInsets.symmetric(
+              horizontal: kDefaultPadding, vertical: kDefaultPadding / 3),
+          child: Container(
+            height: MediaQuery.of(context).size.height * 0.05,
+            child: TextField(
+              controller: _searchController,
+              decoration: const InputDecoration(
+                filled: true,
+                fillColor: kgreydark,
+                label: Text("Search"),
+                // labelText: 'Search',
+                // hintText: 'Search for something...',
+                prefixIcon: Icon(Icons.search),
+                border: OutlineInputBorder(
+                  borderRadius: BorderRadius.all(Radius.circular(15)),
+                  borderSide: BorderSide.none,
+                ),
+                // border: OutlineInputBorder(
+                //   borderRadius: BorderRadius.circular(15.0),
+                // ),
               ),
-            ],
+              onChanged: (value) {
+                // Handle search logic here
+                print('Searching for: $value');
+              },
+            ),
           ),
         ),
         Expanded(

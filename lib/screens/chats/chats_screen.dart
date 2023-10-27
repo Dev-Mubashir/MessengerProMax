@@ -15,22 +15,24 @@ class _ChatsScreenState extends State<ChatsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: kblack,
       appBar: buildAppBar(),
-      body: const Body(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        backgroundColor: kPrimaryColor,
-        child: const Icon(
-          Icons.person_add_alt_1,
-          color: Colors.white,
-        ),
-      ),
+      body: Body(),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   backgroundColor: kPrimaryColor,
+      //   child: const Icon(
+      //     Icons.person_add_alt_1,
+      //     color: Colors.white,
+      //   ),
+      // ),
       bottomNavigationBar: buildBottomNavigationBar(),
     );
   }
 
   BottomNavigationBar buildBottomNavigationBar() {
     return BottomNavigationBar(
+      backgroundColor: kblack,
       type: BottomNavigationBarType.fixed,
       currentIndex: _selectedIndex,
       onTap: (value) {
@@ -40,27 +42,35 @@ class _ChatsScreenState extends State<ChatsScreen> {
       },
       items: const [
         BottomNavigationBarItem(icon: Icon(Icons.messenger), label: "Chats"),
+        BottomNavigationBarItem(icon: Icon(Icons.video_call), label: "Calls"),
         BottomNavigationBarItem(icon: Icon(Icons.people), label: "People"),
         BottomNavigationBarItem(icon: Icon(Icons.call), label: "Calls"),
-        BottomNavigationBarItem(
-          icon: CircleAvatar(
-            radius: 14,
-            backgroundImage: AssetImage("assets/images/user_2.png"),
-          ),
-          label: "Profile",
-        ),
+        // BottomNavigationBarItem(
+        //   icon: CircleAvatar(
+        //     radius: 14,
+        //     backgroundImage: AssetImage("assets/images/user_2.png"),
+        //   ),
+        //   label: "Profile",
+        // ),
       ],
     );
   }
 
   AppBar buildAppBar() {
     return AppBar(
-      backgroundColor: kPrimaryColor,
+      leading: const Icon(
+        Icons.menu,
+        color: kPrimaryColor,
+      ),
+      backgroundColor: kblack,
       automaticallyImplyLeading: false,
-      title: const Text("Chats"),
+      title: Center(child: const Text("Chats")),
       actions: [
         IconButton(
-          icon: const Icon(Icons.search),
+          icon: const Icon(
+            Icons.new_releases,
+            color: kPrimaryColor,
+          ),
           onPressed: () {},
         ),
       ],

@@ -3,9 +3,11 @@ import 'package:flutter/material.dart';
 import '../../../constants.dart';
 
 class ChatInputField extends StatelessWidget {
-  const ChatInputField({
+  ChatInputField({
     Key? key,
   }) : super(key: key);
+
+  final TextEditingController chatController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -15,7 +17,7 @@ class ChatInputField extends StatelessWidget {
         vertical: kDefaultPadding / 2,
       ),
       decoration: BoxDecoration(
-        color: Theme.of(context).scaffoldBackgroundColor,
+        color: kblack,
         boxShadow: [
           BoxShadow(
             offset: const Offset(0, 4),
@@ -26,58 +28,86 @@ class ChatInputField extends StatelessWidget {
       ),
       child: SafeArea(
         child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
+            const Icon(
+              Icons.add_circle,
+              color: kPrimaryColor,
+              // color: Theme.of(context)
+              //     .textTheme
+              //     .bodyLarge!
+              //     .color!
+              //     .withOpacity(0.64),
+            ),
+            const SizedBox(width: kDefaultPadding / 2),
+            const Icon(
+              Icons.camera_alt,
+              color: kPrimaryColor,
+              // color: Theme.of(context)
+              //     .textTheme
+              //     .bodyLarge!
+              //     .color!
+              //     .withOpacity(0.64),
+            ),
+            const SizedBox(width: kDefaultPadding / 2),
+            const Icon(
+              Icons.image_outlined,
+              color: kPrimaryColor,
+              // color: Theme.of(context)
+              //     .textTheme
+              //     .bodyLarge!
+              //     .color!
+              //     .withOpacity(0.64),
+            ),
+            const SizedBox(width: kDefaultPadding / 2),
             const Icon(Icons.mic, color: kPrimaryColor),
-            const SizedBox(width: kDefaultPadding),
+            // const SizedBox(width: kDefaultPadding / 5),
             Expanded(
-              child: Container(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: kDefaultPadding * 0.75,
-                ),
-                decoration: BoxDecoration(
-                  color: kPrimaryColor.withOpacity(0.05),
-                  borderRadius: BorderRadius.circular(40),
-                ),
-                child: Row(
-                  children: [
-                    Icon(
-                      Icons.sentiment_satisfied_alt_outlined,
-                      color: Theme.of(context)
-                          .textTheme
-                          .bodyLarge!
-                          .color!
-                          .withOpacity(0.64),
+              child: TextField(
+                controller: chatController,
+                decoration: const InputDecoration(
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.all(Radius.circular(30)),
+                      borderSide: BorderSide.none,
                     ),
-                    const SizedBox(width: kDefaultPadding / 4),
-                    const Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: "Type message",
-                          border: InputBorder.none,
-                        ),
-                      ),
-                    ),
-                    Icon(
-                      Icons.attach_file,
-                      color: Theme.of(context)
-                          .textTheme
-                          .bodyLarge!
-                          .color!
-                          .withOpacity(0.64),
-                    ),
-                    const SizedBox(width: kDefaultPadding / 4),
-                    Icon(
-                      Icons.camera_alt_outlined,
-                      color: Theme.of(context)
-                          .textTheme
-                          .bodyLarge!
-                          .color!
-                          .withOpacity(0.64),
-                    ),
-                  ],
-                ),
+                    hintText: "Aa",
+                    // border: InputBorder.none,
+                    filled: true,
+                    fillColor: kgreydark,
+                    suffixIcon: Icon(
+                      Icons.emoji_emotions,
+                      color: kPrimaryColor,
+                    )),
               ),
             ),
+            // const Icon(
+            //   Icons.emoji_emotions,
+            //   color: kPrimaryColor,
+            //   // color: Theme.of(context)
+            //   //     .textTheme
+            //   //     .bodyLarge!
+            //   //     .color!
+            //   //     .withOpacity(0.64),
+            // ),
+            SizedBox(width: kDefaultPadding / 4),
+            const Icon(
+              Icons.thumb_up,
+              color: kPrimaryColor,
+            ),
+            // Expanded(
+            //   child: Container(
+            //     padding: const EdgeInsets.symmetric(
+            //       horizontal: kDefaultPadding * 0.75,
+            //     ),
+            //     // decoration: BoxDecoration(
+            //     //   color: kPrimaryColor.withOpacity(0.05),
+            //     //   borderRadius: BorderRadius.circular(40),
+            //     // ),
+            //     child: Row(
+            //       children: [],
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
