@@ -11,20 +11,20 @@ class OnlineIndicator extends StatelessWidget {
     return Stack(
       children: [
         CircleAvatar(
-          radius: 40.0, // Adjust the size as needed
+          radius: 40.0, 
           backgroundImage:
-              NetworkImage(imageUrl), // Replace with your image source
+              NetworkImage(imageUrl),
         ),
         if (isOnline)
           Positioned(
             bottom: 0,
             right: 0,
             child: Container(
-              width: 16, // Adjust the size as needed
-              height: 16, // Adjust the size as needed
+              width: 16, 
+              height: 16, 
               decoration: const BoxDecoration(
                 shape: BoxShape.circle,
-                color: Colors.green, // You can customize the color
+                color: Colors.green, 
               ),
             ),
           ),

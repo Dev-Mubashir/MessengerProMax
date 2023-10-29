@@ -114,13 +114,12 @@ class SigninOrSignupScreen extends StatelessWidget {
               const SizedBox(height: kDefaultPadding / 1.5),
               PrimaryButton(
                 text: "Log In",
-                press: () {},
-                // press: () => Navigator.push(
-                //   context,
-                //   MaterialPageRoute(
-                //     builder: (context) => const ChatsScreen(),
-                //   ),
-                // ),
+                press: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => const ChatsScreen(),
+                  ),
+                ),
               ),
               const SizedBox(height: kDefaultPadding / 1.5),
               PrimaryButton(
